@@ -15,13 +15,25 @@
   <meta property="og:image" content="assets/images/og-image.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600&family=Bellefair&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&display=swap">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
   <a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
 
-  <p class="announce">משלוח חינם בהזמנה מעל ₪400 · איסוף עצמי מיבנה</p>
+  <section class="announce" aria-label="הודעות האתר">
+    <div class="announce__viewport">
+      <div class="announce__track">
+        <ul class="announce__group"><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li></ul>
+        <ul class="announce__group" aria-hidden="true"><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li></ul>
+      </div>
+    </div>
+    <button class="announce__toggle" id="announce-toggle" type="button" aria-pressed="false">
+      <span class="visually-hidden">עצירת ההודעות הנעות</span>
+      <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9M11 3.5v9" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+      <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5l7 4.5-7 4.5z" fill="currentColor"/></svg>
+    </button>
+  </section>
 
   <header class="site-header">
     <div class="wrap">

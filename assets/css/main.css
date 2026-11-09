@@ -14,8 +14,8 @@
   --line: #d6cec3;       /* hairlines */
 
   /* Type */
-  --font-display: "Bellefair", "Frank Ruhl Libre", "David", Georgia, serif;
-  --font-body: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif;
+  --font-display: "Heebo", "Assistant", "Arial Hebrew", Arial, sans-serif;
+  --font-body: "Heebo", "Assistant", "Arial Hebrew", Arial, sans-serif;
 
   --step--1: 0.875rem;
   --step-0: 1.0625rem;
@@ -65,8 +65,9 @@ img { max-width: 100%; display: block; }
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 1.15;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   margin: 0;
   text-wrap: balance;
 }
@@ -134,7 +135,7 @@ a { color: inherit; }
   background: var(--ink);
   color: var(--cream);
   font: inherit;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.02em;
   text-decoration: none;
   cursor: pointer;
@@ -159,12 +160,71 @@ a { color: inherit; }
 
 /* ---------- Announcement + header ---------- */
 .announce {
+  position: relative;
   background: var(--ink);
   color: var(--cream);
-  text-align: center;
   font-size: var(--step--1);
   letter-spacing: 0.04em;
+}
+.announce__viewport {
+  overflow: hidden;
+  direction: ltr; /* track runs left-to-right so it can slide left seamlessly */
   padding-block: 0.5rem;
+  margin-left: 40px; /* room for the pause button (physical: viewport is ltr) */
+}
+.announce__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+.announce__group {
+  display: flex;
+  flex-shrink: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.announce__group li {
+  direction: rtl;
+  white-space: nowrap;
+  padding-inline: 2.25rem;
+  position: relative;
+}
+.announce__group li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.6;
+  transform: translate(-50%, -50%);
+}
+.announce:hover .announce__track,
+.announce.is-paused .announce__track { animation-play-state: paused; }
+.announce__toggle {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  width: 40px;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+  color: var(--cream);
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+.announce__toggle svg { width: 14px; height: 14px; }
+.announce__toggle .i-play { display: none; }
+.announce.is-paused .i-play { display: block; }
+.announce.is-paused .i-pause { display: none; }
+.announce__toggle:focus-visible { outline-color: var(--cream); outline-offset: -4px; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .site-header {
@@ -424,7 +484,7 @@ a { color: inherit; }
   text-align: center;
 }
 .promises li + li { border-top: 1px solid var(--line); }
-.promises strong { font-family: var(--font-display); font-weight: 400; font-size: var(--step-1); }
+.promises strong { font-family: var(--font-display); font-weight: 500; font-size: var(--step-1); }
 .promises span { color: var(--muted); font-size: var(--step--1); }
 
 @media (min-width: 720px) {
@@ -475,7 +535,7 @@ a { color: inherit; }
 .product-card__meta { display: grid; gap: 0.1rem; }
 .product-card h3 { font-size: var(--step-1); }
 .product-card__sub { color: var(--muted); font-size: var(--step--1); }
-.product-card__price { font-variant-numeric: tabular-nums; font-weight: 600; }
+.product-card__price { font-variant-numeric: tabular-nums; font-weight: 500; }
 .badge {
   position: absolute;
   top: 12px;
@@ -523,7 +583,7 @@ a { color: inherit; }
   font-size: var(--step--1);
   letter-spacing: 0.1em;
 }
-.process strong { font-weight: 600; }
+.process strong { font-weight: 500; }
 .process span { color: var(--muted); font-size: var(--step--1); line-height: 1.5; }
 
 @media (min-width: 900px) {
@@ -647,4 +707,8 @@ a { color: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
+  .announce__toggle, .announce__group[aria-hidden="true"] { display: none; }
+  .announce__viewport { margin-left: 0; direction: rtl; }
+  .announce__track { width: auto; justify-content: center; }
+  .announce__group li:nth-child(n+3) { display: none; }
 }

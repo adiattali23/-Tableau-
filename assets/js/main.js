@@ -30,6 +30,17 @@
     if (e.key === "Escape" && nav && nav.classList.contains("is-open")) setNav(false);
   });
 
+  // ----- Announcement bar: pause / play (WCAG 2.2.2) -----
+  var annBtn = document.getElementById("announce-toggle");
+  if (annBtn) {
+    annBtn.addEventListener("click", function () {
+      var bar = annBtn.closest(".announce");
+      var paused = bar.classList.toggle("is-paused");
+      annBtn.setAttribute("aria-pressed", String(paused));
+      annBtn.querySelector(".visually-hidden").textContent = paused ? "הפעלת ההודעות הנעות" : "עצירת ההודעות הנעות";
+    });
+  }
+
   // ----- Reveal on scroll -----
   var items = document.querySelectorAll(".reveal");
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
