@@ -30,6 +30,8 @@
     return cache[url];
   }
   function loadAll() {
+    // preview builds embed the data directly in the page
+    if (window.ORE_DATA) return Promise.resolve(window.ORE_DATA);
     return Promise.all([getJSON("data/products.json"), getJSON("data/settings.json")]).then(function (r) {
       return { products: r[0].products || [], settings: r[1] };
     });
