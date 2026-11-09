@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>סל הקניות | ORÉ</title>
+  <meta name="description" content="סל הקניות שלך ב-ORÉ.">
+  <meta name="theme-color" content="#f5f1eb">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="סל הקניות | ORÉ">
+  <meta property="og:description" content="נרות יצוקים בכלי בטון בעבודת יד. מגיע ארוז למתנה.">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
+
+  <section class="announce" aria-label="הודעות האתר">
+    <div class="announce__viewport">
+      <div class="announce__track">
+        <ul class="announce__group"><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li></ul>
+        <ul class="announce__group" aria-hidden="true"><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li></ul>
+      </div>
+    </div>
+    <button class="announce__toggle" id="announce-toggle" type="button" aria-pressed="false">
+      <span class="visually-hidden">עצירת ההודעות הנעות</span>
+      <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9M11 3.5v9" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+      <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5l7 4.5-7 4.5z" fill="currentColor"/></svg>
+    </button>
+  </section>
+
+  <header class="site-header">
+    <div class="wrap">
+      <div class="header-start">
+        <button class="nav-toggle" id="nav-open" type="button" aria-expanded="false" aria-controls="main-nav">
+          <span class="visually-hidden">פתיחת תפריט</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+        </button>
+        <nav class="main-nav" id="main-nav" aria-label="ניווט ראשי">
+          <button class="nav-close icon-btn" id="nav-close" type="button">
+            <span class="visually-hidden">סגירת תפריט</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+          </button>
+          <ul>
+            <li><a href="shop.html">החנות</a></li>
+            <li><a href="about.html">הסיפור</a></li>
+            <li><a href="contact.html">צרי קשר</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <a class="logo" href="index.html"><img src="assets/images/logo-badge.webp" width="96" height="96" alt="ORÉ, לדף הבית"></a>
+
+      <div class="header-end">
+        <a class="icon-btn" href="cart.html">
+          <span class="visually-hidden cart-label">סל הקניות, 0 פריטים</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="cart-count" aria-hidden="true">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <div class="nav-scrim" id="nav-scrim" aria-hidden="true"></div>
+
+  <main id="main" class="wrap page">
+    <div class="section-head section-head--center">
+      <h1>סל הקניות</h1>
+    </div>
+    <p id="cart-status" class="visually-hidden" role="status" aria-live="polite"></p>
+    <div id="cart">
+      <div id="cart-empty" class="empty-state empty-state--cart" hidden>
+        <p>הסל ריק כרגע.</p>
+        <a class="btn" href="shop.html">לחנות</a>
+      </div>
+      <div id="cart-full" class="cart-layout" hidden>
+        <div class="cart-main">
+          <ul class="lines" id="cart-items"></ul>
+          <button type="button" class="link-btn" id="cart-clear">ריקון הסל</button>
+        </div>
+        <form id="checkout-form" class="checkout" novalidate>
+          <div class="free-ship">
+            <p id="free-ship-note" aria-live="polite"></p>
+            <div class="free-ship__bar" id="free-ship-bar" aria-hidden="true"><span></span></div>
+          </div>
+
+          <fieldset>
+            <legend>איך לשלוח?</legend>
+            <div id="shipping-options" class="radio-cards"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>הפרטים שלך</legend>
+            <div class="field">
+              <label for="c-name">שם מלא</label>
+              <input id="c-name" name="name" type="text" autocomplete="name" required aria-describedby="c-name-err">
+              <p class="field-error" id="c-name-err" data-error-for="c-name"></p>
+            </div>
+            <div class="field">
+              <label for="c-phone">טלפון</label>
+              <input id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" dir="ltr" required pattern="0[0-9]{1,2}[\- ]?[0-9]{3}[\- ]?[0-9]{4}" placeholder="050-1234567" aria-describedby="c-phone-err">
+              <p class="field-error" id="c-phone-err" data-error-for="c-phone"></p>
+            </div>
+            <div id="address-fields">
+            <div class="field">
+              <label for="c-street">רחוב ומספר בית</label>
+              <input id="c-street" name="street" type="text" autocomplete="address-line1" aria-describedby="c-street-err">
+              <p class="field-error" id="c-street-err" data-error-for="c-street"></p>
+            </div>
+            <div class="field">
+              <label for="c-city">עיר</label>
+              <input id="c-city" name="city" type="text" autocomplete="address-level2" aria-describedby="c-city-err">
+              <p class="field-error" id="c-city-err" data-error-for="c-city"></p>
+            </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>מתנה? <span class="optional">(לא חובה)</span></legend>
+            <div class="field">
+              <label for="c-gift">ברכה שתצורף להזמנה</label>
+              <textarea id="c-gift" name="gift" rows="3" maxlength="200" placeholder="מזל טוב! באהבה, ..."></textarea>
+            </div>
+            <div class="field">
+              <label for="c-notes">הערות להזמנה</label>
+              <textarea id="c-notes" name="notes" rows="2" maxlength="300"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="coupon">
+            <label for="coupon">קוד קופון</label>
+            <div class="field-row field-row--light">
+              <input id="coupon" name="coupon" type="text" autocomplete="off" dir="ltr">
+              <button type="button" class="btn btn--ghost" id="coupon-apply">הפעלה</button>
+            </div>
+            <p id="coupon-msg" class="coupon__msg" aria-live="polite"></p>
+          </div>
+
+          <dl class="summary">
+            <div><dt>סכום ביניים</dt><dd id="sum-subtotal"></dd></div>
+            <div id="sum-discount-row" hidden><dt>הנחה</dt><dd id="sum-discount"></dd></div>
+            <div><dt>משלוח</dt><dd id="sum-shipping"></dd></div>
+            <div class="summary__total"><dt>סה"כ</dt><dd id="sum-total"></dd></div>
+          </dl>
+
+          <button class="btn btn--block" type="submit">המשך להזמנה בוואטסאפ</button>
+          <p class="form-note">ההזמנה נשלחת אלינו בוואטסאפ. נחזור אלייך לאישור ולתיאום התשלום.</p>
+
+          <div id="wa-panel" class="wa-panel" hidden>
+            <p><strong>ההזמנה מוכנה.</strong> לחצי על הכפתור כדי לפתוח את וואטסאפ עם כל הפרטים, ואז שלחי את ההודעה.</p>
+            <a id="wa-link" class="btn btn--block btn--wa" href="#" target="_blank" rel="noopener">שליחת ההזמנה בוואטסאפ</a>
+            <details>
+              <summary>איך ההודעה תיראה</summary>
+              <pre id="wa-preview"></pre>
+            </details>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo logo--lg" href="index.html"><img src="assets/images/logo-badge.webp" width="96" height="96" alt="ORÉ, לדף הבית" loading="lazy"></a>
+          <p>נרות יצוקים בכלי בטון, בעבודת יד ביבנה.</p>
+        </div>
+        <nav aria-labelledby="f-shop">
+          <h2 id="f-shop">חנות</h2>
+          <ul>
+            <li><a href="shop.html">כל המוצרים</a></li>
+            <li><a href="shop.html#candles">נרות</a></li>
+            <li><a href="shop.html#concrete">מוצרי בטון</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-info">
+          <h2 id="f-info">מידע</h2>
+          <ul>
+            <li><a href="about.html">הסיפור</a></li>
+            <li><a href="contact.html">צרי קשר</a></li>
+            <li><a href="shipping.html">משלוחים והחזרות</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-legal">
+          <h2 id="f-legal">משפטי</h2>
+          <ul>
+            <li><a href="terms.html">תקנון</a></li>
+            <li><a href="privacy.html">מדיניות פרטיות</a></li>
+            <li><a href="accessibility.html">הצהרת נגישות</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> ORÉ. כל הזכויות שמורות.</p>
+        <p><a data-whatsapp-link data-whatsapp-text href="https://wa.me/972522543585" target="_blank" rel="noopener">וואטסאפ 052-254-3585</a> · אינסטגרם (יתווסף בהמשך)</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/store.js"></script>
+</body>
+</html>

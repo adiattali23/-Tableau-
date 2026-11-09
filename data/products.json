@@ -1,0 +1,53 @@
+{
+  "_readme": "רשימת המוצרים. כל מוצר: מזהה באנגלית (id), שם, מחיר, קטגוריה, תמונות ואפשרויות. אם יש גדלים עם מחירים שונים, מוסיפים אותם ב-sizes ואז המחיר נלקח משם.",
+  "products": [
+    {
+      "id": "noel",
+      "name": "נואל",
+      "category": "candles",
+      "price": 139,
+      "sizes": [],
+      "colors": ["אפור בטון", "שיש בהיר"],
+      "scents": ["ונילה ועץ", "כותנה נקייה", "ללא ריח"],
+      "short": "נר רב-פתילים בכלי בטון גלי",
+      "description": "כאן יופיע התיאור של נואל: מידות, משקל, מספר פתילים, זמן בעירה משוער וסוג השעווה.",
+      "images": ["assets/images/products/test-noel-square.webp", "assets/images/products/test-noel-2.webp"],
+      "art": "candle",
+      "featured": true,
+      "badge": "חדש",
+      "stock": null
+    },
+    {
+      "id": "elor",
+      "name": "אלור",
+      "category": "candles",
+      "price": 110,
+      "sizes": [],
+      "colors": ["אפור בטון", "חול"],
+      "scents": ["ונילה ועץ", "כותנה נקייה", "ללא ריח"],
+      "short": "נר בכלי בטון גבוה",
+      "description": "כאן יופיע התיאור של אלור: מידות, משקל, זמן בעירה משוער וסוג השעווה.",
+      "images": [],
+      "art": "candle-tall-sand",
+      "featured": true,
+      "badge": "",
+      "stock": null
+    },
+    {
+      "id": "lenor",
+      "name": "לנור",
+      "category": "candles",
+      "price": 89,
+      "sizes": [],
+      "colors": ["פחם", "אפור בטון"],
+      "scents": ["ונילה ועץ", "כותנה נקייה", "ללא ריח"],
+      "short": "נר בכלי בטון נמוך",
+      "description": "כאן יופיע התיאור של לנור: מידות, משקל, זמן בעירה משוער וסוג השעווה.",
+      "images": [],
+      "art": "candle-dark",
+      "featured": true,
+      "badge": "",
+      "stock": null
+    }
+  ]
+}
