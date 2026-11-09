@@ -36,6 +36,7 @@
     annBtn.addEventListener("click", function () {
       var bar = annBtn.closest(".announce");
       var paused = bar.classList.toggle("is-paused");
+      document.documentElement.classList.toggle("marquee-paused", paused);
       annBtn.setAttribute("aria-pressed", String(paused));
       annBtn.querySelector(".visually-hidden").textContent = paused ? "הפעלת ההודעות הנעות" : "עצירת ההודעות הנעות";
     });

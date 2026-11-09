@@ -70,49 +70,62 @@
 
   <main id="main">
     <!-- HERO -->
-    <section class="wrap hero" aria-labelledby="hero-title">
-      <div class="hero__media plate plate--sand reveal" role="img" aria-label="נר בכלי בטון אפור דולק על משטח בגוון חול">
-        <!-- replace with: <img src="images/hero.webp" alt="..."> -->
-        <div class="candle candle--tall" aria-hidden="true">
-          <div class="candle__vessel"></div>
-          <div class="candle__wax"></div>
-          <div class="candle__wick"></div>
-          <div class="candle__flame"></div>
+    <div class="wrap hero-wrap">
+      <section class="hero reveal" aria-labelledby="hero-title">
+        <div class="hero__media plate plate--sand" role="img" aria-label="נר בכלי בטון אפור דולק על רקע בגוון חול">
+          <!-- replace with: <img src="images/hero.webp" alt="..."> -->
+          <div class="candle candle--tall" aria-hidden="true"><div class="candle__vessel"></div><div class="candle__wax"></div><div class="candle__wick"></div><div class="candle__flame"></div></div>
         </div>
-      </div>
-      <div class="hero__copy reveal">
-        <p class="eyebrow">נרות בטון בעבודת יד · יבנה</p>
-        <h1 id="hero-title">אור רך<br>בכלי של אבן</h1>
-        <p class="hero__lead">נרות שנוצקים ביד בכלי בטון גולמי. כל כלי יוצא קצת אחרת, ונשאר אצלך גם אחרי שהנר נגמר.</p>
-        <div class="hero__actions">
-          <a class="btn" href="shop.html">לכל הנרות</a>
-          <a class="btn btn--ghost" href="#gifts">רעיונות למתנה</a>
+        <div class="hero__copy">
+          <p class="eyebrow">נרות בטון בעבודת יד</p>
+          <h1 id="hero-title">אור רך<br>בכלי של אבן</h1>
+          <p class="hero__lead">נרות שנוצקים ביד בכלי בטון גולמי. כל כלי יוצא קצת אחרת, ונשאר אצלך גם אחרי שהנר נגמר.</p>
+          <div class="hero__actions">
+            <a class="btn" href="shop.html">לכל הנרות</a>
+            <a class="btn btn--ghost" href="#categories">רעיונות למתנה</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
-    <!-- PROMISES -->
-    <section class="promises" aria-label="מה מקבלים">
-      <div class="wrap">
-        <ul>
-          <li><strong>יצוק בעבודת יד</strong><span>כל כלי נוצק ומלוטש אחד-אחד</span></li>
-          <li><strong>מגיע מוכן למתנה</strong><span>בקופסה אטומה וסגורה</span></li>
-          <li><strong>משלוח חינם מ-₪400</strong><span>או איסוף עצמי מיבנה</span></li>
-        </ul>
+    <!-- MOVING PROMISE STRIP -->
+    <div class="strip" aria-label="למה ORÉ" role="region">
+      <div class="announce__track">
+        <ul class="announce__group"><li>יצוק בעבודת יד</li><li>משלוח חינם מעל ₪400</li><li>מגיע ארוז למתנה</li><li>רכישה מאובטחת באתר</li><li>כל כלי קצת אחר</li><li>יצוק בעבודת יד</li><li>משלוח חינם מעל ₪400</li><li>מגיע ארוז למתנה</li><li>רכישה מאובטחת באתר</li><li>כל כלי קצת אחר</li></ul>
+        <ul class="announce__group" aria-hidden="true"><li>יצוק בעבודת יד</li><li>משלוח חינם מעל ₪400</li><li>מגיע ארוז למתנה</li><li>רכישה מאובטחת באתר</li><li>כל כלי קצת אחר</li><li>יצוק בעבודת יד</li><li>משלוח חינם מעל ₪400</li><li>מגיע ארוז למתנה</li><li>רכישה מאובטחת באתר</li><li>כל כלי קצת אחר</li></ul>
       </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section class="section wrap" id="categories" aria-labelledby="cat-title">
+      <div class="section-head section-head--center reveal">
+        <p class="eyebrow">הקולקציה</p>
+        <h2 id="cat-title">מה מחפשים היום?</h2>
+      </div>
+      <ul class="categories">
+        <li class="reveal"><a class="category" href="shop.html#candles">
+          <div class="plate plate--sand" aria-hidden="true"><div class="candle" aria-hidden="true"><div class="candle__vessel"></div><div class="candle__wax"></div><div class="candle__wick"></div><div class="candle__flame"></div></div></div>
+          <span class="pill-label">נרות <span aria-hidden="true">‹</span></span>
+        </a></li>
+        <li class="reveal"><a class="category" href="shop.html#concrete">
+          <div class="plate" aria-hidden="true"><div class="slab"></div></div>
+          <span class="pill-label">מוצרי בטון <span aria-hidden="true">‹</span></span>
+        </a></li>
+        <li class="reveal"><a class="category" href="shop.html#gifts">
+          <div class="plate plate--dark" aria-hidden="true"><div class="candle candle--small candle--sand" aria-hidden="true"><div class="candle__vessel"></div><div class="candle__wax"></div><div class="candle__wick"></div><div class="candle__flame"></div></div></div>
+          <span class="pill-label">מתנות <span aria-hidden="true">‹</span></span>
+        </a></li>
+      </ul>
     </section>
 
     <!-- FEATURED PRODUCTS -->
-    <section class="section wrap" id="gifts" aria-labelledby="featured-title">
-      <div class="section-head reveal">
-        <div>
+    <section class="section section--tint" aria-labelledby="featured-title">
+      <div class="wrap">
+        <div class="section-head reveal">
           <p class="eyebrow">נבחרים</p>
           <h2 id="featured-title">האהובים עלינו</h2>
         </div>
-        <a class="link-arrow" href="shop.html">לכל המוצרים <span aria-hidden="true">←</span></a>
-      </div>
-
-      <ul class="products">
+        <ul class="products products--row">
         <li class="product-card reveal">
           <a href="product.html">
             <div class="plate" role="img" aria-label="נר קטן בכלי בטון אפור בהיר">
@@ -120,7 +133,7 @@
             </div>
             <div class="product-card__meta">
               <h3>נר אבן · קטן</h3>
-              <p class="product-card__sub">אפור בטון · 3 ריחות</p>
+              <p class="product-card__sub">אפור בטון</p>
             </div>
           </a>
           <p class="product-card__price">₪49</p>
@@ -133,7 +146,7 @@
             </div>
             <div class="product-card__meta">
               <h3>נר אבן · גבוה</h3>
-              <p class="product-card__sub">חול · 3 ריחות</p>
+              <p class="product-card__sub">חול</p>
             </div>
           </a>
           <p class="product-card__price">₪129</p>
@@ -145,7 +158,7 @@
             </div>
             <div class="product-card__meta">
               <h3>נר פחם · בינוני</h3>
-              <p class="product-card__sub">פחם · 3 ריחות</p>
+              <p class="product-card__sub">פחם</p>
             </div>
           </a>
           <p class="product-card__price">₪89</p>
@@ -162,63 +175,87 @@
           </a>
           <p class="product-card__price">₪79</p>
         </li>
-      </ul>
+        </ul>
+        <div class="section-foot reveal"><a class="btn btn--ghost" href="shop.html">לכל המוצרים</a></div>
+      </div>
     </section>
 
     <!-- STORY -->
-    <section class="story" aria-labelledby="story-title">
-      <div class="wrap section story__grid">
+    <section class="section wrap" aria-labelledby="story-title">
+      <div class="story__grid">
         <div class="story__media plate reveal">
           <img src="assets/images/brand-concrete.webp" width="720" height="720" loading="lazy" alt="הלוגו של ORÉ חרוט בלוח בטון">
         </div>
         <div class="story__copy reveal">
-          <p class="eyebrow">הסיפור שלי</p>
-          <h2 id="story-title">מתחיל מבטון רטוב ונגמר באור</h2>
+          <div class="section-head">
+            <p class="eyebrow">הסיפור שלי</p>
+            <h2 id="story-title">מתחיל מבטון רטוב ונגמר באור</h2>
+          </div>
           <p>ORÉ נולד בסטודיו קטן ביבנה. כל כלי נוצק ביד, מתייבש לאט ומלוטש אחד-אחד. הבטון נשאר גולמי, עם הבועות והגוונים שלו, ולכן אין שני כלים זהים. כשהנר נגמר, הכלי נשאר אצלך לעציץ, לתכשיטים או פשוט כי הוא יפה.</p>
+          <ul class="stats">
+            <li><strong>100%</strong><span>עבודת יד</span></li>
+            <li><strong>₪400</strong><span>משלוח חינם מעל</span></li>
+            <li><strong>יבנה</strong><span>הסטודיו שלנו</span></li>
+          </ul>
           <ol class="process" aria-label="תהליך היצירה">
             <li><strong>יציקה</strong><span>בטון לתוך תבנית, ביד</span></li>
             <li><strong>ייבוש</strong><span>כמה ימים, בלי לזרז</span></li>
             <li><strong>ליטוש</strong><span>שפה חלקה, מגע נעים</span></li>
             <li><strong>מילוי</strong><span>שעווה, פתיל וריח</span></li>
           </ol>
-          <a class="link-arrow" href="about.html">לסיפור המלא <span aria-hidden="true">←</span></a>
+          <a class="btn btn--ghost" href="about.html">לסיפור המלא</a>
         </div>
       </div>
     </section>
 
     <!-- TESTIMONIALS (placeholders: replace with real customer quotes) -->
-    <section class="section wrap" aria-labelledby="quotes-title">
-      <div class="section-head reveal">
-        <div>
+    <section class="section section--tint" aria-labelledby="quotes-title">
+      <div class="wrap">
+        <div class="section-head reveal">
           <p class="eyebrow">מילים טובות</p>
           <h2 id="quotes-title">מה אומרות הלקוחות</h2>
         </div>
+        <ul class="quotes">
+          <li class="reveal"><figure class="quote is-placeholder"><blockquote><p>כאן ייכנס ציטוט אמיתי של לקוחה, משפט או שניים.</p></blockquote><figcaption>שם הלקוחה</figcaption></figure></li>
+          <li class="reveal"><figure class="quote is-placeholder"><blockquote><p>מקום לציטוט שני, למשל על המתנה שהיא קנתה.</p></blockquote><figcaption>שם הלקוחה</figcaption></figure></li>
+          <li class="reveal"><figure class="quote is-placeholder"><blockquote><p>ומקום לציטוט שלישי, מאינסטגרם או מוואטסאפ.</p></blockquote><figcaption>שם הלקוחה</figcaption></figure></li>
+        </ul>
       </div>
-      <ul class="quotes">
-        <li class="reveal">
-          <figure class="quote is-placeholder">
-            <blockquote><p>כאן ייכנס ציטוט אמיתי של לקוחה, משפט או שניים.</p></blockquote>
-            <figcaption>שם הלקוחה · עיר</figcaption>
-          </figure>
-        </li>
-        <li class="reveal">
-          <figure class="quote is-placeholder">
-            <blockquote><p>מקום לציטוט שני, למשל על המתנה שהיא קנתה.</p></blockquote>
-            <figcaption>שם הלקוחה · עיר</figcaption>
-          </figure>
-        </li>
-        <li class="reveal">
-          <figure class="quote is-placeholder">
-            <blockquote><p>ומקום לציטוט שלישי, מאינסטגרם או מוואטסאפ.</p></blockquote>
-            <figcaption>שם הלקוחה · עיר</figcaption>
-          </figure>
-        </li>
-      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section wrap" aria-labelledby="faq-title">
+      <div class="section-head section-head--center reveal">
+        <p class="eyebrow">שאלות נפוצות</p>
+        <h2 id="faq-title">כל מה שרצית לדעת</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>כמה עולה משלוח ותוך כמה זמן הוא מגיע?</summary>
+          <div><p>משלוח חינם בהזמנה מעל ₪400. בהזמנה קטנה יותר עלות המשלוח מופיעה בקופה לפי סוג המשלוח. זמני המשלוח יעודכנו כאן בקרוב.</p></div>
+        </details>
+        <details>
+          <summary>אפשר לאסוף בעצמי?</summary>
+          <div><p>כן, אפשר לבחור בקופה איסוף עצמי מיבנה, בלי עלות. נתאם איתך מועד אחרי ההזמנה.</p></div>
+        </details>
+        <details>
+          <summary>זה מתאים למתנה?</summary>
+          <div><p>כן. כל מוצר מגיע בקופסה אטומה וסגורה, מוכן למסירה. אפשר להוסיף ברכה אישית בקופה.</p></div>
+        </details>
+        <details>
+          <summary>מה עושים עם הכלי כשהנר נגמר?</summary>
+          <div><p>הכלי נשאר שלך. מנקים את שאריות השעווה במים חמים, ומשתמשים בו לעציץ קטן, לתכשיטים או למה שתרצי.</p></div>
+        </details>
+        <details>
+          <summary>איך מדליקים נכון ובבטחה?</summary>
+          <div><p>בהדלקה הראשונה כדאי לתת לנר לדלוק עד שכל פני השעווה נמסים, כך הוא יישרף באופן אחיד. מקצרים את הפתיל לפני כל הדלקה.</p><p>לא משאירים נר דולק בלי השגחה, ומרחיקים אותו מילדים, מחיות ומחפצים דליקים. הבטון מתחמם בזמן הבעירה, ולכן מניחים אותו על משטח יציב.</p></div>
+        </details>
+      </div>
     </section>
 
     <!-- NEWSLETTER -->
-    <section class="newsletter" aria-labelledby="news-title">
-      <div class="wrap">
+    <section class="newsletter wrap" aria-labelledby="news-title">
+      <div class="newsletter__card">
         <div>
           <h2 id="news-title">קודם אצלך</h2>
           <p>קולקציות חדשות, מהדורות קטנות והטבות לנרשמות בלבד. מייל אחד בחודש, לא יותר.</p>
@@ -232,6 +269,18 @@
           <p class="form-note">אפשר לבטל בכל רגע. פרטים ב<a href="privacy.html">מדיניות הפרטיות</a>.</p>
           <p class="form-status" id="newsletter-status" role="status" aria-live="polite"></p>
         </form>
+      </div>
+    </section>
+
+    <!-- TRUST BAND -->
+    <section class="trust" aria-label="למה לקנות אצלנו">
+      <div class="wrap">
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 10 0v3"/><rect x="5" y="11" width="14" height="10" rx="2"/></svg><strong>רכישה מאובטחת</strong><span>התשלום עובר ישירות דרך חברת סליקה מאובטחת. פרטי האשראי לא נשמרים אצלנו.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><strong>משלוח עד הבית</strong><span>חינם בהזמנה מעל ₪400, או איסוף עצמי.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="9" width="17" height="11.5" rx="1"/><path d="M3 9h18M12 9v11.5M12 9c-1.5-3.5-5.5-4-5.5-1.5S10 9 12 9zm0 0c1.5-3.5 5.5-4 5.5-1.5S14 9 12 9z"/></svg><strong>מוכן למתנה</strong><span>כל מוצר מגיע בקופסה אטומה וסגורה.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-4 0-7-3-7-7V9.5a1.5 1.5 0 0 1 3 0V12M8 12V5.5a1.5 1.5 0 0 1 3 0V11M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11V6.5a1.5 1.5 0 0 1 3 0V14c0 4-2 7-5 7"/></svg><strong>עבודת יד</strong><span>כל כלי נוצק ומלוטש אחד-אחד.</span></li>
+        </ul>
       </div>
     </section>
   </main>
