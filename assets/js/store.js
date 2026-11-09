@@ -231,7 +231,7 @@
     if (!root) return;
 
     function render() {
-      var id = decodeURIComponent(location.hash.slice(1));
+      var id = decodeURIComponent(location.hash.slice(1)) || lastProduct();
       var p = data.products.filter(function (x) { return x.id === id; })[0] || data.products[0];
       if (!p) { root.innerHTML = '<p class="empty-state">המוצר לא נמצא.</p>'; return; }
       document.title = p.name + " | ORÉ";
@@ -507,6 +507,20 @@
 
     render();
   }
+
+  // Remember which product was clicked, in case the link's #id is dropped on the way
+  // (some previewers strip it when moving between pages).
+  var LAST_KEY = "ore-last-product";
+  var memoryLast = "";
+  function lastProduct() {
+    try { return localStorage.getItem(LAST_KEY) || memoryLast; } catch (e) { return memoryLast; }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="product.html#"]');
+    if (!a) return;
+    memoryLast = decodeURIComponent(a.getAttribute("href").split("#")[1] || "");
+    try { localStorage.setItem(LAST_KEY, memoryLast); } catch (err) { /* private mode */ }
+  }, true);
 
   // ---------- boot ----------
   updateCartCount();
