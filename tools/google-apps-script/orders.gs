@@ -10,7 +10,7 @@
  * The only line you need to edit is OWNER_EMAIL below.
  */
 
-const OWNER_EMAIL = 'PUT-YOUR-BUSINESS-EMAIL@gmail.com';
+const OWNER_EMAIL = 'oreoffice.shop@gmail.com';
 // Only if you created the script from script.google.com (not from inside the sheet):
 // paste the sheet's ID here — the long code in the sheet's address between /d/ and /edit.
 const SHEET_ID = '';

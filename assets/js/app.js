@@ -316,6 +316,9 @@
       a.href = "https://wa.me/" + s.whatsapp;
       if (a.hasAttribute("data-whatsapp-text")) a.textContent = (a.closest(".contact__info") ? "" : "וואטסאפ ") + (s.whatsappDisplay || "");
     });
+    $$("[data-email-link]").forEach(function (a) {
+      if (s.email) { a.href = "mailto:" + s.email; a.textContent = s.email; } else a.closest("li, div").hidden = true;
+    });
     $$("[data-instagram-link]").forEach(function (a) {
       if (s.instagram) { a.href = "https://instagram.com/" + s.instagram.replace(/^@/, ""); a.closest("li").hidden = false; a.hidden = false; }
       else a.closest("li").hidden = true;
