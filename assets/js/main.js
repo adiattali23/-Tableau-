@@ -1,4 +1,4 @@
-// ORÉ — site behaviour (mobile menu, gentle reveal, newsletter placeholder)
+// ORÉ — site behaviour (mobile menu, marquee pause, newsletter placeholder)
 (function () {
   "use strict";
   document.documentElement.classList.add("js");
@@ -39,28 +39,6 @@
       document.documentElement.classList.toggle("marquee-paused", paused);
       annBtn.setAttribute("aria-pressed", String(paused));
       annBtn.querySelector(".visually-hidden").textContent = paused ? "הפעלת ההודעות הנעות" : "עצירת ההודעות הנעות";
-    });
-  }
-
-  // ----- Reveal on scroll -----
-  var items = document.querySelectorAll(".reveal");
-  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (!("IntersectionObserver" in window) || reduce) {
-    items.forEach(function (el) { el.classList.add("is-visible"); });
-  } else {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          io.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    items.forEach(function (el) {
-      // anything already on screen at load shows immediately
-      var r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight) el.classList.add("is-visible");
-      else io.observe(el);
     });
   }
 

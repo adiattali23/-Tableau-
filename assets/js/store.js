@@ -242,7 +242,7 @@
         return '<fieldset class="option-set"><legend>' + esc(label) + "</legend><div class=\"chips\">" +
           values.map(function (v, i) {
             var val = typeof v === "string" ? v : v.label;
-            var extra = typeof v === "string" ? "" : " · " + money(v.price);
+            var extra = typeof v === "string" ? "" : ", " + money(v.price);
             var idAttr = "opt-" + name + "-" + i;
             return '<input class="chip-input" type="radio" name="' + name + '" id="' + idAttr + '" value="' + esc(val) + '"' + (i === 0 ? " checked" : "") + '>' +
               '<label class="chip" for="' + idAttr + '">' + esc(val) + extra + "</label>";
@@ -262,7 +262,6 @@
             }).join("") + "</div>" : "") +
           "</div>" +
           '<div class="pdp__info">' +
-            '<p class="eyebrow">' + esc(cat ? cat.label : "") + "</p>" +
             "<h1>" + esc(p.name) + "</h1>" +
             '<p class="pdp__short">' + esc(p.short || "") + "</p>" +
             '<p class="pdp__price" id="pdp-price">' + money(priceOf(p, p.sizes && p.sizes[0] && p.sizes[0].label)) + "</p>" +
@@ -389,7 +388,7 @@
 
       $("#cart-items").innerHTML = items.map(function (i, idx) {
         var p = byId[i.id];
-        var opts = [i.size, i.color, i.scent].filter(Boolean).join(" · ");
+        var opts = [i.size, i.color, i.scent].filter(Boolean).join(", ");
         return '<li class="line">' +
           '<a class="line__media ' + plateClass(p) + '" href="product.html#' + esc(p.id) + '" tabindex="-1" aria-hidden="true">' + mediaHTML(p, 0, true) + "</a>" +
           '<div class="line__info"><a class="line__name" href="product.html#' + esc(p.id) + '">' + esc(i.name) + "</a>" +
