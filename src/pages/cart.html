@@ -1,0 +1,35 @@
+<!--
+title: סל הקניות | ORÉ
+description: סל הקניות שלך ב-ORÉ.
+page: cart
+-->
+  <main id="main" class="wrap page">
+    <header class="page-head">
+      <h1>סל הקניות</h1>
+    </header>
+    <p id="cart-status" class="visually-hidden" role="status" aria-live="polite"></p>
+    <div id="cart-empty" class="empty" hidden>
+      <p>הסל ריק כרגע.</p>
+      <a class="btn" href="shop.html">לחנות</a>
+    </div>
+    <div id="cart-full" class="cart-page" hidden>
+      <div class="cart-page__lines">
+        <div class="lines-head" aria-hidden="true"><span>מוצר</span><span>כמות</span><span>סה"כ</span></div>
+        <ul class="lines" id="cart-lines"></ul>
+        <div class="cart-page__under">
+          <a class="link-btn" href="shop.html">המשך קנייה</a>
+          <button type="button" class="link-btn" id="cart-clear">ריקון הסל</button>
+        </div>
+      </div>
+      <aside class="summary-box" aria-labelledby="sum-title">
+        <h2 id="sum-title">סיכום</h2>
+        <div class="ship-meter" id="cart-ship"><p></p><div class="meter"><span></span></div></div>
+        <dl class="summary">
+          <div><dt>סכום ביניים</dt><dd id="cart-subtotal"></dd></div>
+          <div><dt>משלוח</dt><dd>נבחר בקופה</dd></div>
+        </dl>
+        <a class="btn btn--block" href="checkout.html">להמשך לתשלום</a>
+        <p class="summary-note">קוד קופון וברכה למתנה מוסיפים בקופה.</p>
+      </aside>
+    </div>
+  </main>

@@ -7,17 +7,58 @@
   "currency": "₪",
   "freeShippingThreshold": 400,
   "shipping": [
-    { "id": "courier", "label": "שליח עד הבית", "price": 35, "freeOverThreshold": true, "needsAddress": true, "note": "מחיר לדוגמה, יעודכן" },
-    { "id": "pickup-point", "label": "נקודת איסוף", "price": 25, "freeOverThreshold": true, "needsAddress": false, "note": "מחיר לדוגמה, יעודכן" },
-    { "id": "self-pickup", "label": "איסוף עצמי מיבנה", "price": 0, "freeOverThreshold": false, "needsAddress": false, "note": "נתאם איתך מועד בוואטסאפ" }
+    {
+      "id": "courier",
+      "label": "שליח עד הבית",
+      "price": 35,
+      "freeOverThreshold": true,
+      "needsAddress": true,
+      "note": "מחיר לדוגמה, יעודכן"
+    },
+    {
+      "id": "pickup-point",
+      "label": "נקודת איסוף",
+      "price": 25,
+      "freeOverThreshold": true,
+      "needsAddress": false,
+      "note": "מחיר לדוגמה, יעודכן"
+    },
+    {
+      "id": "self-pickup",
+      "label": "איסוף עצמי מיבנה",
+      "price": 0,
+      "freeOverThreshold": false,
+      "needsAddress": false,
+      "note": "נתאם איתך מועד בוואטסאפ"
+    }
   ],
   "coupons": [
-    { "code": "WELCOME10", "type": "percent", "value": 10, "label": "10% הנחה (קופון לדוגמה)" }
+    {
+      "code": "WELCOME10",
+      "type": "percent",
+      "value": 10,
+      "label": "10% הנחה (קופון לדוגמה)"
+    }
   ],
   "categories": [
-    { "id": "candles", "label": "נרות" },
-    { "id": "concrete", "label": "מוצרי בטון" },
-    { "id": "gifts", "label": "מתנות" }
+    {
+      "id": "candles",
+      "label": "נרות",
+      "description": "נרות שנוצקים ביד בכלי בטון. כשהנר נגמר, הכלי נשאר שלך.",
+      "art": "candle"
+    },
+    {
+      "id": "concrete",
+      "label": "מוצרי בטון",
+      "description": "מגשים, פמוטים וכדים מבטון, באותה שפה של הנרות.",
+      "art": "vase"
+    },
+    {
+      "id": "gifts",
+      "label": "מארזי מתנה",
+      "description": "שילובים מוכנים, ארוזים בקופסה סגורה ומוכנים למסירה.",
+      "art": "set"
+    }
   ],
   "safety": [
     "בהדלקה הראשונה תני לנר לדלוק עד שכל פני השעווה נמסים. כך הוא יישרף באופן אחיד.",
@@ -25,5 +66,19 @@
     "אל תשאירי נר דולק בלי השגחה, והרחיקי אותו מילדים, מחיות ומחפצים דליקים.",
     "הבטון מתחמם בזמן הבעירה. הניחי את הנר על משטח יציב ועמיד לחום, ואל תזיזי אותו כשהוא דולק.",
     "כשהנר נגמר, נקי את שאריות השעווה במים חמים והשתמשי בכלי כרצונך."
+  ],
+  "payments": [
+    {
+      "id": "bit",
+      "label": "ביט",
+      "note": "אחרי שנאשר את ההזמנה נשלח לך בקשת תשלום בביט.",
+      "enabled": true
+    },
+    {
+      "id": "card",
+      "label": "כרטיס אשראי",
+      "note": "יתווסף בקרוב.",
+      "enabled": false
+    }
   ]
 }

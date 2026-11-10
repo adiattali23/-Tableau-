@@ -1,0 +1,120 @@
+<!--
+title: קופה | ORÉ
+description: השלמת ההזמנה ב-ORÉ.
+page: checkout
+-->
+  <main id="main" class="wrap page page--checkout">
+    <header class="page-head">
+      <h1>קופה</h1>
+    </header>
+
+    <div id="checkout-empty" class="empty" hidden>
+      <p>הסל ריק, אז אין עדיין מה להזמין.</p>
+      <a class="btn" href="shop.html">לחנות</a>
+    </div>
+
+    <div class="checkout" id="checkout" hidden>
+      <form class="checkout__form" id="checkout-form" novalidate>
+        <fieldset class="step">
+          <legend><span class="step__num">1</span>פרטים ליצירת קשר</legend>
+          <div class="fields fields--2">
+            <div class="field">
+              <label for="c-name">שם מלא</label>
+              <input id="c-name" name="name" type="text" autocomplete="name" required aria-describedby="c-name-err">
+              <p class="field-error" id="c-name-err" data-error-for="c-name"></p>
+            </div>
+            <div class="field">
+              <label for="c-phone">טלפון</label>
+              <input id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" dir="ltr" required pattern="0[0-9]{1,2}[\- ]?[0-9]{3}[\- ]?[0-9]{4}" placeholder="050-1234567" aria-describedby="c-phone-err">
+              <p class="field-error" id="c-phone-err" data-error-for="c-phone"></p>
+            </div>
+            <div class="field field--wide">
+              <label for="c-email">מייל <span class="optional">(לא חובה, לקבלה)</span></label>
+              <input id="c-email" name="email" type="email" autocomplete="email" dir="ltr" aria-describedby="c-email-err">
+              <p class="field-error" id="c-email-err" data-error-for="c-email"></p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step__num">2</span>משלוח</legend>
+          <div class="choices" id="shipping-options"></div>
+          <div class="fields fields--2" id="address-fields">
+            <div class="field field--wide">
+              <label for="c-street">רחוב ומספר בית</label>
+              <input id="c-street" name="street" type="text" autocomplete="address-line1" aria-describedby="c-street-err">
+              <p class="field-error" id="c-street-err" data-error-for="c-street"></p>
+            </div>
+            <div class="field">
+              <label for="c-city">עיר</label>
+              <input id="c-city" name="city" type="text" autocomplete="address-level2" aria-describedby="c-city-err">
+              <p class="field-error" id="c-city-err" data-error-for="c-city"></p>
+            </div>
+            <div class="field">
+              <label for="c-apt">דירה / קומה <span class="optional">(לא חובה)</span></label>
+              <input id="c-apt" name="apt" type="text" autocomplete="address-line2">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step__num">3</span>תשלום</legend>
+          <div class="choices" id="payment-options"></div>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step__num">4</span>מתנה? <span class="optional">(לא חובה)</span></legend>
+          <div class="field">
+            <label for="c-gift">ברכה שתצורף להזמנה</label>
+            <textarea id="c-gift" name="gift" rows="3" maxlength="200" placeholder="מזל טוב! באהבה, ..."></textarea>
+          </div>
+          <div class="field">
+            <label for="c-notes">הערות להזמנה</label>
+            <textarea id="c-notes" name="notes" rows="2" maxlength="300"></textarea>
+          </div>
+        </fieldset>
+
+        <label class="check">
+          <input type="checkbox" id="c-terms" required aria-describedby="c-terms-err">
+          <span>קראתי ואני מסכימה ל<a href="policies.html" target="_blank">תקנון ולמדיניות הפרטיות</a></span>
+        </label>
+        <p class="field-error" id="c-terms-err" data-error-for="c-terms"></p>
+
+        <button class="btn btn--block btn--lg" type="submit" id="place-order">ביצוע הזמנה</button>
+        <p class="form-note">אחרי ביצוע ההזמנה נפתח לך וואטסאפ עם כל הפרטים. שולחים את ההודעה, ואנחנו מאשרות ושולחות בקשת תשלום.</p>
+      </form>
+
+      <aside class="summary-box checkout__summary" aria-labelledby="co-sum-title">
+        <h2 id="co-sum-title">ההזמנה שלך</h2>
+        <ul class="mini-lines" id="co-lines"></ul>
+        <div class="coupon">
+          <label for="coupon">קוד קופון</label>
+          <div class="coupon__row">
+            <input id="coupon" type="text" autocomplete="off" dir="ltr">
+            <button type="button" class="btn btn--outline btn--sm" id="coupon-apply">הפעלה</button>
+          </div>
+          <p class="coupon__msg" id="coupon-msg" aria-live="polite"></p>
+        </div>
+        <dl class="summary">
+          <div><dt>סכום ביניים</dt><dd id="co-subtotal"></dd></div>
+          <div id="co-discount-row" hidden><dt>הנחה</dt><dd id="co-discount"></dd></div>
+          <div><dt>משלוח</dt><dd id="co-shipping"></dd></div>
+          <div class="summary__total"><dt>סה"כ לתשלום</dt><dd id="co-total"></dd></div>
+        </dl>
+        <div class="ship-meter" id="co-ship"><p></p><div class="meter"><span></span></div></div>
+      </aside>
+    </div>
+
+    <section class="done" id="order-done" hidden aria-labelledby="done-title" tabindex="-1">
+      <svg class="done__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21"/><path d="m15 24.5 6 6 12-13"/></svg>
+      <h2 id="done-title">ההזמנה נקלטה</h2>
+      <p>מספר הזמנה <strong id="done-no" dir="ltr"></strong></p>
+      <p class="done__step">נשאר צעד אחד: לשלוח לנו את ההזמנה בוואטסאפ. לחצי על הכפתור, ונפתחת הודעה מוכנה עם כל הפרטים.</p>
+      <a class="btn btn--lg btn--wa" id="done-wa" href="#" target="_blank" rel="noopener">שליחת ההזמנה בוואטסאפ</a>
+      <details class="done__preview">
+        <summary>איך ההודעה תיראה</summary>
+        <pre id="done-preview"></pre>
+      </details>
+      <div class="done__links"><a href="account.html">להזמנות שלי</a><a href="shop.html">להמשך קנייה</a></div>
+    </section>
+  </main>
