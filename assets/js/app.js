@@ -773,7 +773,7 @@
     var payload = {
       no: o.no,
       date: o.date,
-      items: o.items.map(function (i) { return { name: i.name, options: optsText(i), qty: i.qty, price: i.price, total: i.price * i.qty }; }),
+      items: o.items.map(function (i) { return { id: i.id, size: i.size, name: i.name, options: optsText(i), qty: i.qty, price: i.price, total: i.price * i.qty }; }),
       subtotal: o.t.subtotal,
       discount: o.t.discount,
       coupon: o.coupon,
@@ -784,7 +784,8 @@
       customer: o.c,
       needsAddress: !!o.t.method.needsAddress,
       gift: o.gift,
-      notes: o.notes
+      notes: o.notes,
+      hp: o.hp || ""
     };
     try {
       fetch(url, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(payload), keepalive: true });
@@ -809,6 +810,7 @@
 
     // prefill from saved details
     var d = load(KEYS.details, null);
+    if (d) $("#c-remember").checked = true;
     if (d) ["name", "phone", "email", "street", "city", "apt"].forEach(function (k) { var el = $("#c-" + k); if (el && d[k]) el.value = d[k]; });
 
     function shipId() { return (form.querySelector('input[name="shipping"]:checked') || {}).value; }
@@ -878,13 +880,17 @@
         payment: pay ? pay.label : "",
         c: { name: val("c-name"), phone: val("c-phone"), email: val("c-email"), street: val("c-street"), city: val("c-city"), apt: val("c-apt") },
         gift: val("c-gift"),
-        notes: val("c-notes")
+        notes: val("c-notes"),
+        hp: val("c-website")
       };
       o.message = orderMessage(o);
-      var orders = load(KEYS.orders, []);
-      orders.unshift(o);
-      save(KEYS.orders, orders.slice(0, 50));
-      save(KEYS.details, o.c);
+      // keep details and order history on this device only if she asked to
+      if ($("#c-remember").checked) {
+        var orders = load(KEYS.orders, []);
+        orders.unshift(o);
+        save(KEYS.orders, orders.slice(0, 20));
+        save(KEYS.details, o.c);
+      }
       cart.set([]);
       var recorded = sendOrder(o);
       $("#done-step").textContent = recorded ?

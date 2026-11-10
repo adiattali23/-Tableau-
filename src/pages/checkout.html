@@ -75,6 +75,14 @@ page: checkout
         </fieldset>
 
         <label class="check">
+          <input type="checkbox" id="c-remember">
+          <span>לשמור את הפרטים וההזמנה במכשיר הזה, למילוי מהיר בפעם הבאה</span>
+        </label>
+        <div class="hp" aria-hidden="true">
+          <label for="c-website">אל תמלאי את השדה הזה</label>
+          <input id="c-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <label class="check">
           <input type="checkbox" id="c-terms" required aria-describedby="c-terms-err">
           <span>קראתי ואני מסכימה ל<a href="policies.html" target="_blank">תקנון ולמדיניות הפרטיות</a></span>
         </label>

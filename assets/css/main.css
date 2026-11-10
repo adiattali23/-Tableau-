@@ -1071,3 +1071,6 @@ select {
   .announce__track { width: auto; justify-content: center; }
   .announce__group li:nth-child(n+3) { display: none; }
 }
+
+/* hidden trap field: people never see it, simple bots fill it in */
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
