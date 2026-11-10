@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORÉ · הזמנת ניסיון</title>
+<style>
+  body { margin: 0; background: #fbf9f6; color: #1d1b19; font-family: Arial, Helvetica, sans-serif; display: grid; place-items: center; min-height: 100vh; padding: 16px; box-sizing: border-box; }
+  main { background: #fff; max-width: 480px; width: 100%; padding: 32px; text-align: center; box-shadow: 0 8px 24px rgb(29 27 25 / 0.06); }
+  h1 { font-weight: normal; font-size: 24px; margin: 0 0 8px; }
+  p { color: #67615a; line-height: 1.6; }
+  label { display: block; text-align: right; font-size: 14px; margin: 20px 0 6px; color: #1d1b19; }
+  input { width: 100%; box-sizing: border-box; padding: 12px; font: inherit; border: 1px solid #e4ded5; }
+  button { margin-top: 20px; width: 100%; padding: 14px; font: inherit; font-size: 16px; background: #1d1b19; color: #fff; border: 0; cursor: pointer; }
+  button:disabled { background: #9c968f; cursor: default; }
+  #status { margin-top: 20px; font-size: 15px; color: #1d1b19; min-height: 1.6em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>הזמנת ניסיון ל-ORÉ</h1>
+  <p>הכפתור שולח הזמנה מדומה לטבלת ההזמנות ולמייל, בדיוק כמו שהאתר ישלח.</p>
+  <label for="email">לאיזה מייל לשלוח את אישור ההזמנה של הלקוחה? (לבדיקה)</label>
+  <input id="email" type="email" value="oreoffice.shop@gmail.com" dir="ltr">
+  <button id="send" type="button">שליחת הזמנת ניסיון</button>
+  <p id="status" role="status" aria-live="polite"></p>
+</main>
+<script>
+  var URL = "https://script.google.com/macros/s/AKfycbwzJd2qRkijw4pQzDw5QgplxzPRZ8zxNaslfnB1ejRid99bwIhY4NEJf-A_LfopGP64/exec";
+  document.getElementById("send").addEventListener("click", function () {
+    var btn = this, status = document.getElementById("status");
+    var now = new Date();
+    var order = {
+      no: "TEST-" + now.getHours() + now.getMinutes() + now.getSeconds(),
+      date: now.toISOString(),
+      items: [
+        { name: "נואל", options: "אפור בטון, ונילה ועץ", qty: 2, price: 139, total: 278 },
+        { name: "לנור", options: "פחם, ללא ריח", qty: 1, price: 89, total: 89 }
+      ],
+      subtotal: 367, discount: 0, coupon: "", shipping: "שליח עד הבית", shippingCost: 35, total: 402, payment: "ביט",
+      customer: { name: "הזמנת ניסיון", phone: "052-254-3585", email: document.getElementById("email").value.trim(), street: "רחוב הניסיון 1", city: "יבנה", apt: "" },
+      needsAddress: true, gift: "זו הזמנת ניסיון, אפשר למחוק את השורה", notes: ""
+    };
+    btn.disabled = true;
+    status.textContent = "שולחת…";
+    fetch(URL, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(order) })
+      .then(function () {
+        status.innerHTML = "נשלח ✓<br>תוך דקה תבדקי:<br>1. בטבלה, בלשונית <b>הזמנות</b>, צריכה להופיע שורה <b>" + order.no + "</b>.<br>2. במייל צריכים להגיע שני מיילים: \"הזמנה חדשה\" ו\"קיבלנו את ההזמנה שלך\".";
+      })
+      .catch(function () {
+        status.textContent = "השליחה נכשלה. בדקי שיש חיבור לאינטרנט ונסי שוב.";
+        btn.disabled = false;
+      });
+  });
+</script>
+</body>
+</html>

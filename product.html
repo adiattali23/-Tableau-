@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>מוצר | ORÉ</title>
+  <meta name="description" content="נר או כלי בטון בעבודת יד של ORÉ.">
+  <meta name="theme-color" content="#fbf9f6">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="מוצר | ORÉ">
+  <meta property="og:description" content="נר או כלי בטון בעבודת יד של ORÉ.">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body data-page="product">
+  <a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
+  <section class="announce" aria-label="הודעות האתר">
+    <div class="announce__viewport">
+      <div class="announce__track">
+        <ul class="announce__group"><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li><li>כל נר נוצק בעבודת יד ביבנה</li><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li><li>כל נר נוצק בעבודת יד ביבנה</li></ul>
+        <ul class="announce__group" aria-hidden="true"><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li><li>כל נר נוצק בעבודת יד ביבנה</li><li>משלוח חינם בהזמנה מעל ₪400</li><li>רכישה מאובטחת באתר</li><li>כל נר נוצק בעבודת יד ביבנה</li></ul>
+      </div>
+    </div>
+    <button class="announce__toggle" id="announce-toggle" type="button" aria-pressed="false">
+      <span class="visually-hidden">עצירת ההודעות הנעות</span>
+      <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9M11 3.5v9" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+      <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5l7 4.5-7 4.5z" fill="currentColor"/></svg>
+    </button>
+  </section>
+
+  <header class="site-header" id="site-header">
+    <div class="header-bar wrap">
+      <div class="header-side header-side--start">
+        <button class="icon-btn menu-btn" id="menu-open" type="button" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="visually-hidden">תפריט</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18M3 12h18M3 17.5h18"/></svg>
+        </button>
+        <a class="logo" href="index.html"><img src="assets/images/logo-badge.webp" width="96" height="96" alt="ORÉ, לדף הבית"></a>
+      </div>
+
+      <nav class="main-nav" aria-label="ניווט ראשי">
+        <ul>
+          <li class="has-menu">
+            <a href="shop.html" data-nav="shop">החנות</a>
+            <button class="submenu-btn" type="button" aria-expanded="false" aria-controls="menu-shop"><span class="visually-hidden">קטגוריות החנות</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+            <ul class="submenu" id="menu-shop">
+              <li><a href="shop.html">כל המוצרים</a></li>
+              <li><a href="shop.html#candles">נרות</a></li>
+              <li><a href="shop.html#concrete">מוצרי בטון</a></li>
+              <li><a href="shop.html#gifts">מארזי מתנה</a></li>
+            </ul>
+          </li>
+          <li><a href="shop.html#best" data-nav="best">הנמכרים ביותר</a></li>
+          <li><a href="shop.html#new" data-nav="new">חדש בסטודיו</a></li>
+          <li><a href="about.html" data-nav="about">הסיפור שלנו</a></li>
+          <li><a href="contact.html" data-nav="contact">צרי קשר</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-side header-side--end">
+        <button class="icon-btn" id="search-open" type="button" aria-expanded="false" aria-controls="search-panel">
+          <span class="visually-hidden">חיפוש</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+        </button>
+        <a class="icon-btn hide-sm" href="account.html">
+          <span class="visually-hidden">החשבון שלי</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c1.2-3.8 4-5.5 7.5-5.5s6.3 1.7 7.5 5.5"/></svg>
+        </a>
+        <button class="icon-btn" id="cart-open" type="button" aria-expanded="false" aria-controls="cart-drawer">
+          <span class="visually-hidden cart-label">סל הקניות, 0 פריטים</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12.5H6.2L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="cart-count" aria-hidden="true">0</span>
+        </button>
+      </div>
+    </div>
+    <p class="ship-strip" id="ship-strip" aria-live="polite">משלוח חינם בהזמנה מעל ₪400</p>
+  </header>
+
+<main id="main" class="wrap page">
+    <div id="product" aria-live="polite"><p class="loading">טוען את המוצר…</p></div>
+    <section class="section" aria-labelledby="related-title">
+      <header class="section-title">
+        <h2 id="related-title">אולי תאהבי גם</h2>
+      </header>
+      <div class="rail" data-rail>
+        <button class="rail__arrow rail__arrow--prev" type="button" data-rail-dir="-1"><span class="visually-hidden">הקודמים</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+        <ul class="products products--rail" id="related"></ul>
+        <button class="rail__arrow rail__arrow--next" type="button" data-rail-dir="1"><span class="visually-hidden">הבאים</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+      </div>
+    </section>
+  </main>
+
+  <section class="benefits" aria-label="למה ORÉ">
+    <ul class="wrap">
+      <li>
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28c-5.5 0-9-3.8-9-9V12a2 2 0 0 1 4 0v4M11 16V7a2 2 0 0 1 4 0v8M15 15V5.5a2 2 0 0 1 4 0V15M19 15V8.5a2 2 0 0 1 4 0V19c0 5.2-3 9-7 9"/></svg>
+        <strong>עבודת יד</strong>
+        <span>כל כלי נוצק, מתייבש ומלוטש ביד בסטודיו ביבנה</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24h20M8 24V12l8-6 8 6v12"/><path d="M13 24v-6h6v6"/></svg>
+        <strong>חומרי גלם טובים</strong>
+        <span>בטון אדריכלי, שעווה איכותית ופתילים שנבחרו בקפידה</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="10"/><path d="M16 6c3 3.5 3 16.5 0 20M16 6c-3 3.5-3 16.5 0 20M6 16h20"/></svg>
+        <strong>עיצוב מקורי</strong>
+        <span>צורות שמתוכננות בסטודיו, ואין שני כלים זהים</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 9h15v13H4zM19 13h5l4 4.5V22h-9"/><circle cx="9" cy="23" r="2.2"/><circle cx="23" cy="23" r="2.2"/></svg>
+        <strong>משלוח עד הבית</strong>
+        <span>חינם בהזמנה מעל ₪400, או איסוף עצמי מיבנה</span>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="logo logo--footer" href="index.html"><img src="assets/images/logo-badge.webp" width="96" height="96" alt="ORÉ, לדף הבית" loading="lazy"></a>
+        <p>נרות יצוקים בכלי בטון, בעבודת יד ביבנה.</p>
+        <ul class="socials">
+          <li><a data-whatsapp-link href="https://wa.me/972522543585" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5z"/><path d="M9 8.5c.3-.6.6-.6 1-.6.7 0 1.4 1.8 1.4 2.1 0 .6-.8 1-.6 1.4a5 5 0 0 0 2.6 2.4c.4.1.8-.7 1.3-.7.4 0 2 .8 2 1.4 0 1-1 1.7-2 1.7-2.6 0-6.2-3.4-6.2-6 0-.6.2-1.3.5-1.7z"/></svg><span class="visually-hidden">וואטסאפ</span></a></li>
+          <li><a data-instagram-link href="#" hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6"/></svg><span class="visually-hidden">אינסטגרם</span></a></li>
+        </ul>
+      </div>
+
+      <nav class="footer-col" aria-labelledby="f-shop">
+        <h2 id="f-shop">החנות</h2>
+        <ul>
+          <li><a href="shop.html">כל המוצרים</a></li>
+          <li><a href="shop.html#candles">נרות</a></li>
+          <li><a href="shop.html#concrete">מוצרי בטון</a></li>
+          <li><a href="shop.html#gifts">מארזי מתנה</a></li>
+          <li><a href="shop.html#new">חדש בסטודיו</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-labelledby="f-info">
+        <h2 id="f-info">מידע ללקוחות</h2>
+        <ul>
+          <li><a href="about.html">הסיפור שלנו</a></li>
+          <li><a href="contact.html">צרי קשר</a></li>
+          <li><a href="account.html">החשבון שלי</a></li>
+          <li><a href="policies.html">משלוחים והחזרות</a></li>
+          <li><a href="policies.html">תקנון ופרטיות</a></li>
+          <li><a href="policies.html">הצהרת נגישות</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h2>צרי קשר</h2>
+        <ul>
+          <li><a data-whatsapp-link data-whatsapp-text href="https://wa.me/972522543585" target="_blank" rel="noopener">וואטסאפ 052-254-3585</a></li>
+          <li><a data-email-link href="mailto:oreoffice.shop@gmail.com">oreoffice.shop@gmail.com</a></li>
+          <li>איסוף עצמי: יבנה, בתיאום מראש</li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-news">
+        <h2 id="news-title">מייל אחד בחודש</h2>
+        <p>נעדכן אותך על נרות חדשים, מהדורות קטנות והטבות לנרשמות.</p>
+        <form id="newsletter-form" class="news-form" novalidate aria-labelledby="news-title">
+          <label class="visually-hidden" for="newsletter-email">כתובת מייל</label>
+          <input id="newsletter-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="כתובת מייל" required>
+          <button type="submit">הרשמה</button>
+        </form>
+        <p class="form-status" id="newsletter-status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="wrap">
+        <p>© <span id="year">2026</span> ORÉ. כל הזכויות שמורות.</p>
+        <p>רכישה מאובטחת · פרטי אשראי לא נשמרים באתר</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="scrim" id="scrim" hidden></div>
+
+  <!-- mobile menu -->
+  <aside class="drawer drawer--menu" id="mobile-menu" aria-label="תפריט" aria-modal="true" role="dialog" hidden>
+    <div class="drawer__head">
+      <span class="drawer__title">תפריט</span>
+      <button class="icon-btn" type="button" data-close><span class="visually-hidden">סגירה</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <nav class="drawer__body mobile-nav" aria-label="ניווט במובייל">
+      <ul>
+        <li><a href="shop.html">כל המוצרים</a></li>
+        <li><a href="shop.html#candles">נרות</a></li>
+        <li><a href="shop.html#concrete">מוצרי בטון</a></li>
+        <li><a href="shop.html#gifts">מארזי מתנה</a></li>
+        <li><a href="shop.html#best">הנמכרים ביותר</a></li>
+        <li><a href="shop.html#new">חדש בסטודיו</a></li>
+      </ul>
+      <ul class="mobile-nav__secondary">
+        <li><a href="about.html">הסיפור שלנו</a></li>
+        <li><a href="contact.html">צרי קשר</a></li>
+        <li><a href="account.html">החשבון שלי</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- search -->
+  <div class="search-panel" id="search-panel" role="dialog" aria-modal="true" aria-label="חיפוש באתר" hidden>
+    <form class="search-panel__form wrap" id="search-form" role="search">
+      <label class="visually-hidden" for="search-input">חיפוש מוצרים</label>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+      <input id="search-input" type="search" autocomplete="off" placeholder="מה תרצי למצוא? נר, מגש, מתנה…">
+      <button class="icon-btn" type="button" data-close><span class="visually-hidden">סגירת החיפוש</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </form>
+    <div class="search-panel__results wrap" id="search-results" aria-live="polite"></div>
+  </div>
+
+  <!-- cart drawer -->
+  <aside class="drawer drawer--cart" id="cart-drawer" aria-label="סל הקניות" aria-modal="true" role="dialog" hidden>
+    <div class="drawer__head">
+      <span class="drawer__title">סל הקניות <span class="drawer__count" id="drawer-count"></span></span>
+      <button class="icon-btn" type="button" data-close><span class="visually-hidden">סגירת הסל</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="drawer__ship" id="drawer-ship"><p></p><div class="meter"><span></span></div></div>
+    <div class="drawer__body" id="drawer-body"></div>
+    <div class="drawer__foot" id="drawer-foot">
+      <div class="drawer__subtotal"><span>סכום ביניים</span><strong id="drawer-subtotal">₪0</strong></div>
+      <p class="drawer__note">המשלוח וההנחות מחושבים בקופה.</p>
+      <a class="btn btn--block" href="checkout.html">לתשלום</a>
+      <a class="btn btn--ghost btn--block" href="cart.html">לסל הקניות</a>
+    </div>
+  </aside>
+
+  <a class="wa-float" data-whatsapp-link href="https://wa.me/972522543585" target="_blank" rel="noopener"><span class="visually-hidden">כתבי לנו בוואטסאפ</span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2l-.5-.3z"/></svg></a>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!--
+title: החנות | ORÉ
+description: כל הנרות ומוצרי הבטון של ORÉ, בעבודת יד. סינון לפי קטגוריה, צבע, ריח ומחיר.
+page: shop
+nav: shop
+-->
+  <main id="main" class="wrap page">
+    <nav class="crumbs" aria-label="מיקום באתר"><a href="index.html">דף הבית</a><span aria-hidden="true">/</span><span id="crumb-current" aria-current="page">החנות</span></nav>
+    <header class="page-head">
+      <h1 id="shop-title">כל המוצרים</h1>
+      <p id="shop-desc">נרות וכלי בטון בעבודת יד. כל מוצר מגיע ארוז, מוכן למתנה.</p>
+    </header>
+    <div class="shop">
+      <aside class="filters" id="filters" aria-label="סינון מוצרים">
+        <div class="filters__head">
+          <h2>סינון לפי</h2>
+          <button class="icon-btn filters__close" type="button" data-close-filters><span class="visually-hidden">סגירת הסינון</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </div>
+        <div id="filter-groups"></div>
+        <div class="filters__actions">
+          <button class="btn btn--block filters__apply" type="button" data-close-filters>הצגת המוצרים</button>
+          <button class="link-btn" type="button" id="filters-clear">ניקוי הסינון</button>
+        </div>
+      </aside>
+      <div class="shop__main">
+        <div class="toolbar">
+          <button class="btn btn--outline btn--sm toolbar__filter" type="button" id="filters-open" aria-controls="filters" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
+            סינון
+          </button>
+          <p class="toolbar__count" id="shop-count" aria-live="polite"></p>
+          <div class="toolbar__sort">
+            <label for="shop-sort">מיון</label>
+            <select id="shop-sort">
+              <option value="featured">מומלץ</option>
+              <option value="new">החדשים ביותר</option>
+              <option value="price-asc">מחיר: מהנמוך לגבוה</option>
+              <option value="price-desc">מחיר: מהגבוה לנמוך</option>
+            </select>
+          </div>
+        </div>
+        <div class="active-filters" id="active-filters"></div>
+        <ul class="products products--grid3" id="shop-grid"></ul>
+      </div>
+    </div>
+  </main>

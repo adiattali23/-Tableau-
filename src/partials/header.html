@@ -1,0 +1,47 @@
+  <header class="site-header" id="site-header">
+    <div class="header-bar wrap">
+      <div class="header-side header-side--start">
+        <button class="icon-btn menu-btn" id="menu-open" type="button" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="visually-hidden">תפריט</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18M3 12h18M3 17.5h18"/></svg>
+        </button>
+        <a class="logo" href="index.html"><img src="assets/images/logo-badge.webp" width="96" height="96" alt="ORÉ, לדף הבית"></a>
+      </div>
+
+      <nav class="main-nav" aria-label="ניווט ראשי">
+        <ul>
+          <li class="has-menu">
+            <a href="shop.html" data-nav="shop">החנות</a>
+            <button class="submenu-btn" type="button" aria-expanded="false" aria-controls="menu-shop"><span class="visually-hidden">קטגוריות החנות</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>
+            <ul class="submenu" id="menu-shop">
+              <li><a href="shop.html">כל המוצרים</a></li>
+              <li><a href="shop.html#candles">נרות</a></li>
+              <li><a href="shop.html#concrete">מוצרי בטון</a></li>
+              <li><a href="shop.html#gifts">מארזי מתנה</a></li>
+            </ul>
+          </li>
+          <li><a href="shop.html#best" data-nav="best">הנמכרים ביותר</a></li>
+          <li><a href="shop.html#new" data-nav="new">חדש בסטודיו</a></li>
+          <li><a href="about.html" data-nav="about">הסיפור שלנו</a></li>
+          <li><a href="contact.html" data-nav="contact">צרי קשר</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-side header-side--end">
+        <button class="icon-btn" id="search-open" type="button" aria-expanded="false" aria-controls="search-panel">
+          <span class="visually-hidden">חיפוש</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+        </button>
+        <a class="icon-btn hide-sm" href="account.html">
+          <span class="visually-hidden">החשבון שלי</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c1.2-3.8 4-5.5 7.5-5.5s6.3 1.7 7.5 5.5"/></svg>
+        </a>
+        <button class="icon-btn" id="cart-open" type="button" aria-expanded="false" aria-controls="cart-drawer">
+          <span class="visually-hidden cart-label">סל הקניות, 0 פריטים</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12.5H6.2L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="cart-count" aria-hidden="true">0</span>
+        </button>
+      </div>
+    </div>
+    <p class="ship-strip" id="ship-strip" aria-live="polite">משלוח חינם בהזמנה מעל ₪400</p>
+  </header>
