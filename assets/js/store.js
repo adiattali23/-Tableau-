@@ -475,7 +475,11 @@
       var t = totals(items);
       var val = function (id) { var el = $("#" + id); return el ? el.value.trim() : ""; };
       var lines = [];
+      var d = new Date();
+      var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+      var orderNo = "ORE-" + pad(d.getDate()) + pad(d.getMonth() + 1) + "-" + (100 + Math.floor(Math.random() * 900));
       lines.push("שלום! אני רוצה להזמין מ-ORÉ:");
+      lines.push("מספר הזמנה: " + orderNo);
       lines.push("");
       items.forEach(function (i) {
         var opts = [i.size, i.color, i.scent].filter(Boolean).join(", ");
@@ -496,6 +500,7 @@
       var panel = $("#wa-panel");
       $("#wa-link").href = url;
       $("#wa-preview").textContent = lines.join("\n");
+      $("#wa-order-no").textContent = orderNo;
       panel.hidden = false;
       panel.scrollIntoView({ behavior: "smooth", block: "center" });
       $("#wa-link").focus({ preventScroll: true });
