@@ -11,6 +11,9 @@
  */
 
 const OWNER_EMAIL = 'PUT-YOUR-BUSINESS-EMAIL@gmail.com';
+// Only if you created the script from script.google.com (not from inside the sheet):
+// paste the sheet's ID here — the long code in the sheet's address between /d/ and /edit.
+const SHEET_ID = '';
 const SHOP_NAME = 'ORÉ';
 const WHATSAPP = '052-254-3585';
 const SHEET_NAME = 'הזמנות';
@@ -65,7 +68,7 @@ function doPost(e) {
 /* ---------- helpers ---------- */
 
 function sheet_() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
   let sh = ss.getSheetByName(SHEET_NAME);
   if (sh) return sh;
   sh = ss.insertSheet(SHEET_NAME, 0);
