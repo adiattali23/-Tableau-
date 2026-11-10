@@ -4,6 +4,7 @@
   "whatsappDisplay": "052-254-3585",
   "instagram": "",
   "email": "",
+  "ordersWebhook": "",
   "currency": "₪",
   "freeShippingThreshold": 400,
   "shipping": [
@@ -80,5 +81,6 @@
       "note": "יתווסף בקרוב.",
       "enabled": false
     }
-  ]
+  ],
+  "_ordersWebhook_readme": "הכתובת של הסקריפט ב-Google (Web app URL). כשהיא ממולאת, כל הזמנה נשלחת למייל העסק ונרשמת בטבלת Google Sheets. הוראות: docs/orders-setup.md"
 }

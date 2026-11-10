@@ -762,6 +762,32 @@
     if (o.notes) { L.push(""); L.push("הערות: " + o.notes); }
     return L.join("\n");
   }
+  /* Send the order to the owner's Google Sheet + email (see docs/orders-setup.md).
+     Fire-and-forget: the order is already saved here and can still go by WhatsApp. */
+  function sendOrder(o) {
+    var url = DATA.settings.ordersWebhook;
+    if (!url) return false;
+    var payload = {
+      no: o.no,
+      date: o.date,
+      items: o.items.map(function (i) { return { name: i.name, options: optsText(i), qty: i.qty, price: i.price, total: i.price * i.qty }; }),
+      subtotal: o.t.subtotal,
+      discount: o.t.discount,
+      coupon: o.coupon,
+      shipping: o.t.method.label,
+      shippingCost: o.t.ship,
+      total: o.t.total,
+      payment: o.payment,
+      customer: o.c,
+      needsAddress: !!o.t.method.needsAddress,
+      gift: o.gift,
+      notes: o.notes
+    };
+    try {
+      fetch(url, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(payload), keepalive: true });
+      return true;
+    } catch (e) { return false; }
+  }
   function waLink(text) { return "https://wa.me/" + DATA.settings.whatsapp + "?text=" + encodeURIComponent(text); }
 
   function pageCheckout() {
@@ -857,6 +883,10 @@
       save(KEYS.orders, orders.slice(0, 50));
       save(KEYS.details, o.c);
       cart.set([]);
+      var recorded = sendOrder(o);
+      $("#done-step").textContent = recorded ?
+        "קיבלנו את ההזמנה, ונחזור אלייך עם בקשת תשלום בביט. רוצה לזרז? שלחי לנו אותה גם בוואטסאפ." :
+        "נשאר צעד אחד: לשלוח לנו את ההזמנה בוואטסאפ. לחצי על הכפתור, ונפתחת הודעה מוכנה עם כל הפרטים.";
 
       $("#checkout").hidden = true;
       var done = $("#order-done");
