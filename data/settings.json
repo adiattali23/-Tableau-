@@ -4,7 +4,7 @@
   "whatsappDisplay": "052-254-3585",
   "instagram": "",
   "email": "oreoffice.shop@gmail.com",
-  "ordersWebhook": "",
+  "ordersWebhook": "https://script.google.com/macros/s/AKfycbwzJd2qRkijw4pQzDw5QgplxzPRZ8zxNaslfnB1ejRid99bwIhY4NEJf-A_LfopGP64/exec",
   "currency": "₪",
   "freeShippingThreshold": 400,
   "shipping": [
